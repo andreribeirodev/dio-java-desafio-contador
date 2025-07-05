@@ -16,12 +16,16 @@ public class Contador {
     }
 
     static void contar(int parametroUm, int parametroDois) throws ParametrosInvalidosException {
+        int contador = parametroDois - parametroUm;
         if (parametroUm > parametroDois) {
             throw new ParametrosInvalidosException("O segundo parâmetro deve ser maior que o primeiro");
+        } else {
+            iniciarIteracao(contador);
         }
+    }
 
-        int contagem = parametroDois - parametroUm;
-        for (int indicie = 0; indicie < contagem; indicie++) {
+    static void iniciarIteracao(int contador) {
+        for (int indicie = 0; indicie < contador; indicie++) {
             System.out.println("Imprimindo o número " + (indicie + 1));
         }
     }
